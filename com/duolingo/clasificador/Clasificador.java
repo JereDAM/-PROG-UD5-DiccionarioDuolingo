@@ -2,26 +2,26 @@ package com.duolingo.clasificador;
 import java.util.*;
 
 public class Clasificador {
-    private String palabraIntroducida;
-    private Set<String> palabras = new HashSet<String>();
 
-    public Clasificador(String palabraIntroducida){
-        this.palabraIntroducida = palabraIntroducida;
+    private Map<String, Set<String>> listaGeneral = new HashMap<>();
+
+
+    private String obtenerPrimeraLetra(String palabra){ 
+        return palabra.substring(0,0).toLowerCase();
+        // Extraigo la inicial a nuevaPalabra
     }
 
-    public String getPalabraIntroducida(){ //Getter para retornar la palabra;
-        return this.palabraIntroducida;
+    public void anadirPalabra(String nuevaPalabra){
+
+        nuevaPalabra.toLowerCase(); // Limpiar la palabra, todo a minúsculas y sin espacios
+        nuevaPalabra.trim();    
+        // Busco en el Map si existe un Set para esa inicial
+        // Si existe el Set, lo obtengo, añado la palabra y actualizo el mapa con un put
+        // Si no existe el Set, creo un Set nuevo, y lo guardo en el Map para esa letra
+
     }
 
-    public char PrimeraLetra(){  //Método para sacar la primera letra de una palabra;
-        char letraPalabraIntroducida = palabraIntroducida.charAt(0);
-        return letraPalabraIntroducida;
-    }
 
-    public Set<String> anadirPalabra(){
-        palabras.add(palabraIntroducida);
-        return palabras;
-    }
 
     /*public void testeo(){
         System.out.println(palabraIntroducida);
