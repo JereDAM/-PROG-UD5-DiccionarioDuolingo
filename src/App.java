@@ -7,15 +7,17 @@ import com.duolingo.clasificador.Clasificador;
 public class App {
     public static void main(String[] args){
 
-        Scanner teclado = new Scanner(System.in);
+        Scanner teclado = new Scanner(System.in);      
 
-        System.out.println("Introduce un nombre");
-        String nombre = teclado.nextLine();
-
-        Clasificador micClasificador = new Clasificador(nombre);
-
+        Clasificador micClasificador = new Clasificador();
         
-        micClasificador.anadirPalabra();
-        micClasificador.mostrarLista();
+        
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Introduce un nombre");
+            String nombre = teclado.nextLine();
+            micClasificador.anadirPalabra(nombre);
+        }
+
+
     }
 }
