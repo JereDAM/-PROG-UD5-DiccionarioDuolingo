@@ -21,13 +21,22 @@ public class Clasificador {
             primeraLetra = listaGeneral.get(obtenerPrimeraLetra(nuevaPalabra));;
             primeraLetra.add(nuevaPalabra);
             listaGeneral.put(obtenerPrimeraLetra(nuevaPalabra), primeraLetra);
-            System.out.println(listaGeneral);
+            System.out.println("Palabra añadida a lista");
         }else{
             // Si no existe el Set, creo un Set nuevo, y lo guardo en el Map para esa letra
             Set<String> nuevaLetra = new HashSet<>();
             nuevaLetra.add(nuevaPalabra.toLowerCase());
             listaGeneral.put(obtenerPrimeraLetra(nuevaPalabra), nuevaLetra);
-            System.out.println(listaGeneral);
+            System.out.println("Lista creada y palabra nueva añadida");
+        }
+    }
+
+    public void eliminarPalabra(String palabraEliminar){
+        if(listaGeneral.containsKey(obtenerPrimeraLetra(palabraEliminar))){
+            primeraLetra.remove(palabraEliminar);
+            System.out.println("Palabra encontrada y eliminada");
+        }else{
+            System.out.println("la palabra que desea eliminar no existe");
         }
     }
 }
