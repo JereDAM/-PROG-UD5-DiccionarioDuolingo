@@ -52,4 +52,13 @@ public class Clasificador {
             System.out.println("La palabra no existe");
         }
     }
+
+    public void mostrarPalabrasInicial(String letra){
+
+        if(listaGeneral.containsKey(letra)){
+            System.out.println(primeraLetra);
+        }else{
+            System.out.println("La letra no está en la lista");
+        }
+    }
 }
