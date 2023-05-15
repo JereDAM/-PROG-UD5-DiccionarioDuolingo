@@ -32,11 +32,24 @@ public class Clasificador {
     }
 
     public void eliminarPalabra(String palabraEliminar){
-        if(listaGeneral.containsKey(obtenerPrimeraLetra(palabraEliminar))){
+        if(listaGeneral.containsKey(obtenerPrimeraLetra(palabraEliminar))){ // Compruebo que existe la colección y luego elimino la palabra de la coleccion
             primeraLetra.remove(palabraEliminar);
             System.out.println("Palabra encontrada y eliminada");
         }else{
             System.out.println("la palabra que desea eliminar no existe");
+        }
+    }
+
+    public void comprobarExistePalabra(String comprobacionPalabra){  // Compruebo que existe la coleccion, la obtengo, y por ultimo muestro el mensaje
+        if(listaGeneral.containsKey(obtenerPrimeraLetra(comprobacionPalabra))){
+            primeraLetra = listaGeneral.get(obtenerPrimeraLetra(comprobacionPalabra));
+            if(primeraLetra.contains(comprobacionPalabra)){
+                System.out.println("Palabra encontrada");
+            }else{
+                System.out.println("La palabra no existe");
+            }
+        }else{
+            System.out.println("La palabra no existe");
         }
     }
 }
