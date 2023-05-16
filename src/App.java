@@ -44,7 +44,7 @@ public class App {
                     break;
                 
                 case 4:
-                    System.out.println("No disponible por el momento");
+                    palabra.mostrarLetras();
                     break;
                 
                 case 5:
